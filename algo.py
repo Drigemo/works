@@ -73,8 +73,27 @@ class Sorter:
         return self.quicksort_1(left) + [pivot] + self.quicksort_1(right)
 
     def my_algorithm(self, lst: List[int]) -> List[int]:
-        code = sorted(lst)
-        return code
+        if len(lst)  <= 1:
+            return lst
+
+        mid = len(lst) // 2
+        left = lst[:mid]
+        right = lst[mid:]
+
+        sorted_left = self.my_algorithm(left)
+        sorted_right = self.my_algorithm(right)
+
+        return self.merge(sorted_left, sorted_right)
+
+    def merge (self, left: List[int], right: List[int]) -> List[int]:
+        result = []
+        while left and right:
+            if left[0] < right[0]:
+                result.append(left.pop(0))
+            else:
+                result.append(right.pop(0))
+        result.extend(left or right)
+        return result
 
 # Test the sorting functionality
 def main():
