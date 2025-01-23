@@ -1,39 +1,137 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-  <title> Travel agency</title>
+  <title>Travel Agency</title>
   <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<div class="form-container">
-    <form action="/submit" method="POST">
-      <div class="form-group">
-        <label for="destination">Destination</label>
-        <select id="destination" name="destination">
-          <option value="">Destination</option>
-          <option value="paris">Paris</option>
-          <option value="london">London</option>
-          <option value="new-york">New York</option>
-      </select>
-    </div>
-      <div class="form-group">
-        <label for="from">From</label>
-        <input type="date" id="from" name="from">
-      </div>
-      <div class="form-group">
-        <label for="to">To</label>
-        <input type="date" id="to" name="to">
-      </div>
-      <div class="form-group">
-        <label for="guests">Guests</label>
-        <input type="number" id="guests" name="guests" min="1" value="2">
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <!-- Search Bar -->
+        <label for="search-bar" class="visually-hidden">Search</label>
+        <input type="text" id="search-bar" name="search-bar" placeholder="Search">
+
+        <h1>Book your next destination</h1>
+
+        <!-- Booking Form -->
+        <div class="form-container">
+          <form action="/submit" method="POST">
+            <!-- Destination -->
+            <div class="form-group">
+              <label for="destination">Destination</label>
+              <select id="destination" name="destination" required>
+                <option value="">Select destination</option>
+                <option value="paris">Paris</option>
+                <option value="london">London</option>
+                <option value="new-york">New York</option>
+              </select>
+            </div>
+
+            <!-- From and To Dates -->
+            <div class="form-dates">
+              <div class="form-group">
+                <label for="from">From</label>
+                <input type="date" id="from" name="from" required>
+              </div>
+              <div class="form-group">
+                <label for="to">To</label>
+                <input type="date" id="to" name="to" required>
+              </div>
+            </div>
+
+            <!-- Guests -->
+            <div class="form-group">
+              <label for="guests">Guests</label>
+              <input type="number" id="guests" name="guests" min="1" max="10" value="2" required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group form-submit">
+              <button type="submit" class="submit-button" aria-label="Submit the form">Submit ➔</button>
+            </div>
+          </form>
         </div>
-        <div class="form-group">
-          <button type="submit" class="submit-button">➔</button>
       </div>
-    </form>
+    </div>
+  </header>
+<section class="destinations">
+  <h2>Destinations</h2>
+  <div class="destination-paraphs">
+  <p>
+    Lorem ipsum dolor sit amet, adventure travel mountains, beach
+resorts and cultural experiences await. Pack your bags and get
+ready to explore the world! From bustling cities to tranquil
+countryside getaways, there's a destination for every type of
+traveler.
+  </p>
+  <p>
+    If you're a culture lover, the historic cities of London and Edinburgh should be at the top of your list. Walk the streets of London's West End, marvel at the architecture of Big Ben and Buckingham Palace, and take in a show at the Globe Theatre. In Edinburgh, visit the Royal Mile, explore the castle, and sample the local fare at the city's world-famous restaurants.
+  </p>
+  <p>
+For those seeking a bit of relaxation, head to the spas and
+resorts of the English countryside. Indulge in a luxurious
+massage or take a dip in a hot spring. If you're looking for
+something a bit more active, strap on your hiking boots and
+tackle the rugged trails of the coastal cliffs.
+  </p>
+</div>
+  <div class="destination-cards">
+    <div class="card">
+      <img src="paris.jpg" alt="Paris">
+      <h3> Paris</h3>
+      <p>France</p>
   </div>
+  <div class="card">
+            <img src="san-francisco.jpg" alt="San Francisco">
+            <h3>San Francisco</h3>
+            <p>United States</p>
+        </div>
+        <div class="card">
+            <img src="sydney.jpg" alt="Sydney">
+            <h3>Sydney</h3>
+            <p>Australia</p>
+        </div>
+        <div class="card">
+            <img src="tokyo.jpg" alt="Tokyo">
+            <h3>Tokyo</h3>
+            <p>Japan</p>
+        </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-container">
+      <!-- Links Section -->
+      <div class="footer-links">
+        <h4>Links</h4>
+        <ul>
+          <li><a href="http://127.0.0.1:5500/travel_agency/index.html">Home</a></li>
+          <li><a href="placeholder">Destinations</a></li>
+          <li><a href="placeholder">About</a></li>
+          <li><a href="placeholder">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter Section -->
+      <div class="footer-newsletter">
+        <h4>Newsletter</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl nec tincidunt dapibus, magna libero fermentum augu.</p>
+        <form action="/subscribe" method="POST">
+          <input type="email" id="email" name="email" placeholder="Email" required>
+          <button type="submit" aria-label="Submit the form">Subscribe ➔</button>
+        </form>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
