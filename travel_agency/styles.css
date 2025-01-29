@@ -1,4 +1,3 @@
-/* General Reset */
 html, body {
     width: 100%;
     height: 100%; /* Ensures the document spans the full viewport height */
@@ -7,167 +6,136 @@ html, body {
     flex-direction: column; /* Allows footer to be positioned below content */
 }
 
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 20px;
+    background-color: transparent; /* Keep it minimal */
+    position: relative;
+    z-index: 2; /* Ensure it's above the hero image */
+}
+
+/* Unified Button Styles */
+.nav-button {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.nav-button:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    color: #000; /* Slightly darker text for hover */
+}
+
 /* Hero Section */
 .hero-section {
     position: relative;
-    background-image: url('header.jpg');
+    background-image: url('pictures/header.jpg');
     background-size: cover; /* Ensures the image covers the section */
     background-position: center; /* Centers the image */
     height:100vh; 
-    color: black; /* Ensures text color is readable on the image */
     display: flex; /* Flexbox for aligning content */
-    align-items: center; /* Vertically centers the content */
-    justify-content: center; /* Horizontally centers the content */
-    text-align: center; /* Centers the text inside */
     width: 100%;
     margin: 0 auto;
     z-index: 1;
     padding-bottom: 50px; /* Adds spacing below the hero content */
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay for text readability */
-    z-index: 1; /* Keeps it below content */
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2; /* Keeps content above the overlay */
-    max-width: 800px; /* Restricts the width of the content */
-    padding: 20px; /* Adds spacing around the content */
-    display: flex; /* Flexbox for internal alignment */
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Centers child elements horizontally */
-    justify-content: center; /* Centers child elements vertically */
-}
-
-.hero-content h1 {
-    font-size: 48px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.hero-content input#search-bar {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 4px;
-    border: none;
-    width: 90%; /* Use percentage to avoid unnecessary stretching */
-    max-width: 400px; /* Limit the maximum width */
-    margin-bottom: 20px;
-}
-
-/* Booking Form Styles */
-.form-container form {
-    display: flex;
-    flex-wrap: wrap; /* Wrap items for responsiveness */
-    justify-content: center; /* Center the form horizontally */
-    gap: 10px; /* Add space between form elements */
-    z-index: 3;
-}
-
-.form-group {
-    display: flex;
     flex-direction: column;
-    min-width: 150px;
 }
 
-.form-dates {
+
+
+.search-bar {
     display: flex;
-    flex-wrap: nowrap; /* Prevents dates from wrapping */
-    gap: 10px;
-}
-
-.form-group label {
-    margin-bottom: 5px;
-    font-size: 14px;
-}
-
-.form-group input,
-.form-group select {
-    padding: 10px;
-    font-size: 14px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+    align-items: flex-start;
+    justify-content: center;
     width: 100%;
+    margin-top: 20px;
 }
 
-.form-submit button {
-    padding: 10px 20px;
-    background-color: #ffc107;
-    color: black;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
+.form-container {
+    height: 800px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: flex-end;     
+    gap: 15px;
+
 }
 
-.form-submit button:hover {
-    background-color: #ffa000;
+
+
+.destinations h2{
+    margin-top: 40px;
+    margin-bottom: 20px ;
 }
 
-/* Destinations Section */
-.destinations {
-    text-align: center;
-    padding: 50px 20px;
-    margin-top: 50px; /* Adds spacing between hero and destinations */
-    background-color: #f9f9f9;
-    z-index: 1; /* Correct stacking */
-}
-
-.destinations h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
 
 .destination-paraphs {
-    display: flex;
-    flex-direction: row; 
-    gap: 20px; /* Add spacing between paragraphs */
-    font-size: 1.2rem;
-    color: #666;
-    text-align: justify;
+display: flex;
+flex-direction: row;
 }
 
 .destination-cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    display: flex; /* Arrange the cards horizontally */
+    justify-content: center; /* Center the cards */
+    gap: 20px; /* Add space between the cards */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
 
 .card {
-    background-color: transparent;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 250px;
-    text-align: center;
+    position: relative; /* Make the card the reference for positioning the text */
+    width: 300px; /* Set a consistent width for cards */
+    border-radius: 8px; /* Optional: rounded corners */
+    overflow: hidden; /* Prevent content overflow */
+    text-align: center; /* Center-align the text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a shadow for a polished look */
 }
 
 .card img {
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
+    width: 100%; /* Ensure the image fills the card */
+    height: 450px; /* Set a fixed height for uniformity */
+    object-fit: cover; /* Crop the image if necessary to fit */
+    display: block;
+}
+
+.card h3,
+.card p {
+    position: absolute; /* Position text over the image */
+    left: 0; /* Align to the left of the card */
+    right: 0; /* Align to the right of the card */
+    color: white; /* White text for contrast */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Add text shadow for readability */
+    margin: 0;
+    padding: 10px;
 }
 
 .card h3 {
-    font-size: 1.5rem;
-    margin: 10px 0;
+    bottom: 40px; 
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .card p {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 10px;
+    bottom: 10px; 
+    font-size: 16px;
+    
 }
 
-/* Footer Section */
 footer {
     background-color: #ffc107;
     color: black;
@@ -244,41 +212,22 @@ footer {
     background-color: #218838; /* Darker green on hover */
 }
 
+
 /* Responsive Design */
 @media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 32px;
+    .destination-cards {
+        gap: 10px; /* Reduce gap on smaller screens */
     }
 
-    .form-container form {
-        flex-direction: column; /* Stack form elements vertically */
-        align-items: stretch;
-        gap: 15px;
+    .card {
+        width: 100%; /* Make cards fill the available space */
+        max-width: 300px; /* Set a max-width to prevent overly large cards */
     }
 
-    .form-dates {
-        flex-direction: column; /* Stack dates vertically */
+    .card img {
+        height: 300px; /* Adjust height for smaller screens */
     }
-
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-links, .footer-newsletter {
-        flex: 1 1 100%;
-    }
-
-    .footer-newsletter form {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .destinations {
-        margin-top: 30px; /* Adjust spacing for smaller screens */
-    }
-
-    .destination-paraphs {
-        flex-direction: column;
 }
-}
+
+
+    

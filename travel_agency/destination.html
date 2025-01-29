@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Visit Amsterdam</title>
+  <link rel="stylesheet" href="amster_style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+</head>
+<body>
+  <header class="hero-section">
+    <h1>Visit Amsterdam</h1>
+  </header>
+
+  <main class="destination-content">
+    <div class="description">
+      <p>Amsterdam is the capital city of the Netherlands, known for its artistic heritage, elaborate canal system, and narrow houses with gabled facades, legacies of the city’s 17th-century Golden Age.</p>
+      <p>Its Museum District houses the Van Gogh Museum, works by Rembrandt and Vermeer at the Rijksmuseum, and modern art at the Stedelijk. Cycling is key to the city’s character, and there are numerous bike paths.</p>
+      <p>Amsterdam is also famous for its vibrant nightlife, diverse culture, and rich history. Whether you're exploring the Anne Frank House or taking a boat tour through the canals, there's something for everyone in this beautiful city.</p>
+    </div>
+    
+    <div class="form-container">
+      <form action="/submit" method="POST">
+        <!-- Destination -->
+        <div class="form-group">
+          <label for="destination">Destination</label>
+          <select id="destination" name="destination" required>
+            <option value="">Amsterdam</option>
+          </select>
+        </div>
+
+        <!-- From and To Dates -->
+        <div class="form-group">
+          <label for="from">From</label>
+          <input type="date" id="from" name="from" required>
+        </div>
+        <div class="form-group">
+          <label for="to">To</label>
+          <input type="date" id="to" name="to" required>
+        </div>
+
+        <!-- Guests -->
+        <div class="form-group">
+          <label for="guests">Guests</label>
+          <input type="number" id="guests" name="guests" min="1" max="10" value="2" required>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-submit form-group">
+          <button type="submit" class="submit-button">Submit ➔</button>
+        </div>
+      </form>
+    </div>
+    <a href= "destinations.html">Back to all destinations</a>
+    <footer>
+      <div class="footer-container">
+        <!-- Links Section -->
+        <div class="footer-links">
+          <h4>Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="placeholder">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+  
+        <!-- Newsletter Section -->
+        <div class="footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod,
+            nisl nec tincidunt dapibus, magna libero fermentum augue.
+          </p>
+          <form action="/subscribe" method="POST">
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <button type="submit" aria-label="Submit the form">Subscribe ➔</button>
+          </form>
+        </div>
+      </div>
+    </footer>
+</body>
+</html>

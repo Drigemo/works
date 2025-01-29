@@ -1,0 +1,205 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-section {
+    position: relative; /* Make the hero section the reference for positioning the header */
+    background-image: url('pictures/amsterheader.jpg');
+    background-size: cover; /* Ensures the image covers the section */
+    background-position: center; /* Centers the image */
+    height: 100vh; 
+    display: flex; /* Flexbox for aligning content */
+    width: 100%;
+    margin: 0 auto;
+    z-index: 1;
+    padding-bottom: 50px; /* Adds spacing below the hero content */
+}
+
+.hero-section h1 {
+    position: absolute; /* Position the header absolutely within the hero section */
+    top: 50%; /* Center the header vertically */
+    left: 50%; /* Center the header horizontally */
+    transform: translate(-50%, -50%); /* Adjust the position to be truly centered */
+    margin: 0; /* Remove default margin */
+    color: #ffffff; /* White text color for better contrast */
+    font-size: 60px; /* Increase font size for better visibility */
+    font-family: 'Georgia', serif; /* Use a more elegant font */
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    padding: 20px 40px; /* Add padding for more space around the text */
+    border-radius: 10px; /* Rounded corners for a softer look */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle text shadow for depth */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow to the background */
+    text-align: center; /* Center-align the text */
+}
+
+.destination-content {
+    padding: 20px;
+    max-width: 1200px; /* Increase max-width to accommodate three columns */
+    margin: 0 auto;
+}
+
+.description {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Add space between columns */
+    margin-top: 20px;
+}
+
+.description p {
+    flex: 1; /* Allow paragraphs to grow and fill the columns */
+    margin: 0;
+}
+
+.form-container {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.form-container form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Add space between form groups */
+    align-items: flex-end; /* Align items to the bottom */
+}
+
+.form-group {
+    margin-bottom: 15px;
+    flex: 1; /* Allow form groups to grow and fill the row */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.form-container button {
+    padding: 10px 20px; /* Adjust padding for better alignment */
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-end; /* Align the button to the bottom */
+}
+
+.form-container button:hover {
+    background-color: #0056b3;
+}
+
+.back-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #ffc107;
+    color: black;
+    padding: 40px 20px;
+    margin-top: auto;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.footer-links h4, .footer-newsletter h4 {
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: black;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-newsletter p {
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.footer-newsletter form {
+    display: flex;
+    gap: 8px; /* Space between input and button */
+    align-items: center;
+}
+
+.footer-newsletter input {
+    flex: 1; /* Input takes remaining space */
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.footer-newsletter button {
+    background-color: #28a745; /* Green button */
+    color: white;
+    border: none;
+    padding: 0 16px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.footer-newsletter button:hover {
+    background-color: #218838; /* Darker green on hover */
+}

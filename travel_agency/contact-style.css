@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1{
+    font-size: 70px;
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 20px;
+    flex: 1;
+}
+
+.contact-form label {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+
+.contact-form button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #ffc107;
+    color: black;
+    padding: 40px 20px;
+    margin-top: auto;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.footer-links h4, .footer-newsletter h4 {
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: black;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-newsletter p {
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.footer-newsletter form {
+    display: flex;
+    gap: 8px; /* Space between input and button */
+    align-items: center;
+}
+
+.footer-newsletter input {
+    flex: 1; /* Input takes remaining space */
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.footer-newsletter button {
+    background-color: #28a745; /* Green button */
+    color: white;
+    border: none;
+    padding: 0 16px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.footer-newsletter button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
