@@ -2,56 +2,91 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 10; /* Ensures the nav is above the hero section */
+}
+
+.nav-button {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.nav-button:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    color: #000;
+}
+
+/* Hero Section */
 .hero-section {
-    position: relative; /* Make the hero section the reference for positioning the header */
+    position: static;
     background-image: url('pictures/amsterheader.jpg');
-    background-size: cover; /* Ensures the image covers the section */
-    background-position: center; /* Centers the image */
-    height: 100vh; 
-    display: flex; /* Flexbox for aligning content */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
     width: 100%;
-    margin: 0 auto;
+    display: flex;
     z-index: 1;
-    padding-bottom: 50px; /* Adds spacing below the hero content */
 }
 
 .hero-section h1 {
-    position: absolute; /* Position the header absolutely within the hero section */
-    top: 50%; /* Center the header vertically */
-    left: 50%; /* Center the header horizontally */
-    transform: translate(-50%, -50%); /* Adjust the position to be truly centered */
-    margin: 0; /* Remove default margin */
-    color: #ffffff; /* White text color for better contrast */
-    font-size: 60px; /* Increase font size for better visibility */
-    font-family: 'Georgia', serif; /* Use a more elegant font */
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-    padding: 20px 40px; /* Add padding for more space around the text */
-    border-radius: 10px; /* Rounded corners for a softer look */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle text shadow for depth */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow to the background */
-    text-align: center; /* Center-align the text */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 60px;
+    font-family: 'Georgia', serif;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px 40px;
+    border-radius: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
+/* Main Content Section */
 .destination-content {
     padding: 20px;
-    max-width: 1200px; /* Increase max-width to accommodate three columns */
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .description {
     display: flex;
     justify-content: space-between;
-    gap: 20px; /* Add space between columns */
+    gap: 20px;
     margin-top: 20px;
 }
 
 .description p {
-    flex: 1; /* Allow paragraphs to grow and fill the columns */
-    margin: 0;
+    flex: 1;
 }
 
+/* Form Section */
 .form-container {
     margin-top: 20px;
     background-color: #f9f9f9;
@@ -69,13 +104,20 @@ body {
 .form-container form {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px; /* Add space between form groups */
-    align-items: flex-end; /* Align items to the bottom */
+    gap: 20px;
+    align-items: flex-end;
 }
 
 .form-group {
     margin-bottom: 15px;
-    flex: 1; /* Allow form groups to grow and fill the row */
+    flex: 1;
+    
+}
+
+.input-wrapper {
+    width: 100%;
+    position: relative;
+    margin-right: 0px;
 }
 
 .form-group label {
@@ -91,7 +133,6 @@ body {
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box;
 }
 
 .form-group input:focus, .form-group select:focus {
@@ -100,7 +141,7 @@ body {
 }
 
 .form-container button {
-    padding: 10px 20px; /* Adjust padding for better alignment */
+    padding: 10px 20px;
     font-size: 16px;
     border: none;
     border-radius: 4px;
@@ -108,7 +149,7 @@ body {
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    align-self: flex-end; /* Align the button to the bottom */
+    align-self: flex-end;
 }
 
 .form-container button:hover {
@@ -117,7 +158,7 @@ body {
 
 .back-link {
     display: block;
-    margin-top: 20px;
+    margin-top: 40px;
     text-align: center;
     color: #007BFF;
     text-decoration: none;
@@ -127,20 +168,25 @@ body {
     text-decoration: underline;
 }
 
+
+
+/* Footer Section */
 footer {
     background-color: #ffc107;
     color: black;
     padding: 40px 20px;
     margin-top: auto;
-    width: 100%;
+    width: 100%; /* Ensure the footer spans the full width */
+    box-sizing: border-box; /* Include padding in the width calculation */
 }
 
 .footer-container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px; /* Optional: Set a max-width for the content inside the footer */
+    margin: 0 auto; /* Center the container */
     gap: 20px;
 }
 

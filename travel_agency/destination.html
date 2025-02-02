@@ -8,6 +8,10 @@
 </head>
 <body>
   <header class="hero-section">
+    <nav>
+      <a href="destinations.html" class="nav-button">Destinations</a>
+      <a href="contact.html" class="nav-button">Contact us</a>
+    </nav>
     <h1>Visit Amsterdam</h1>
   </header>
 
@@ -19,7 +23,8 @@
     </div>
     
     <div class="form-container">
-      <form action="/submit" method="POST">
+      <h2>Book Your Stay</h2>
+      <form action="submit.html" method="GET">
         <!-- Destination -->
         <div class="form-group">
           <label for="destination">Destination</label>
@@ -28,14 +33,20 @@
           </select>
         </div>
 
-        <!-- From and To Dates -->
+        <!-- From Date -->
         <div class="form-group">
           <label for="from">From</label>
-          <input type="date" id="from" name="from" required>
+          <div class="input-wrapper">
+            <input type="date" id="from" name="from" required>
+          </div>
         </div>
+
+        <!-- To Date -->
         <div class="form-group">
           <label for="to">To</label>
-          <input type="date" id="to" name="to" required>
+          <div class="input-wrapper">
+            <input type="date" id="to" name="to" required>
+          </div>
         </div>
 
         <!-- Guests -->
@@ -45,38 +56,41 @@
         </div>
 
         <!-- Submit Button -->
-        <div class="form-submit form-group">
-          <button type="submit" class="submit-button">Submit ➔</button>
+        <div class="form-group">
+          <button type="submit" class="submit-button" aria-label="Submit the booking form">Submit ➔</button>
         </div>
       </form>
     </div>
-    <a href= "destinations.html">Back to all destinations</a>
-    <footer>
-      <div class="footer-container">
-        <!-- Links Section -->
-        <div class="footer-links">
-          <h4>Links</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="destinations.html">Destinations</a></li>
-            <li><a href="placeholder">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
+    
+    <a href="destinations.html" class="nav-button back-link">Back to all destinations</a>
+  </main>
   
-        <!-- Newsletter Section -->
-        <div class="footer-newsletter">
-          <h4>Newsletter</h4>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod,
-            nisl nec tincidunt dapibus, magna libero fermentum augue.
-          </p>
-          <form action="/subscribe" method="POST">
-            <input type="email" id="email" name="email" placeholder="Email" required>
-            <button type="submit" aria-label="Submit the form">Subscribe ➔</button>
-          </form>
-        </div>
+  <footer>
+    <div class="footer-container">
+      <!-- Links Section -->
+      <div class="footer-links">
+        <h4>Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </div>
-    </footer>
+  
+      <!-- Newsletter Section -->
+      <div class="footer-newsletter">
+        <h4>Newsletter</h4>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod,
+          nisl nec tincidunt dapibus, magna libero fermentum augue.
+        </p>
+        <form action="/subscribe" method="POST">
+          <input type="email" id="email" name="email" placeholder="Email" required>
+          <button type="submit" aria-label="Subscribe to newsletter">Subscribe ➔</button>
+        </form>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
