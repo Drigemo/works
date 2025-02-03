@@ -106,7 +106,7 @@ nav {
     flex-wrap: wrap;
     gap: 20px;
     align-items: flex-end;
-}
+    }
 
 .form-group {
     margin-bottom: 15px;
@@ -176,8 +176,8 @@ footer {
     color: black;
     padding: 40px 20px;
     margin-top: auto;
-    width: 100%; /* Ensure the footer spans the full width */
-    box-sizing: border-box; /* Include padding in the width calculation */
+    width: 100%; 
+    box-sizing: border-box; 
 }
 
 .footer-container {
@@ -248,4 +248,99 @@ footer {
 
 .footer-newsletter button:hover {
     background-color: #218838; /* Darker green on hover */
+}
+
+@media (max-width: 1024px) {
+    /* Adjust the Navigation */
+    nav {
+        top: 5px;
+        right: 10px;
+        gap: 8px;
+    }
+    .nav-button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    /* Adjust Hero Section */
+    .hero-section h1 {
+        font-size: 40px;
+        padding: 15px 30px;
+    }
+
+    /* Main Content Adjustments */
+    .destination-content {
+        padding: 15px;
+    }
+    
+    .description {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Form Section Adjustments */
+    .form-container {
+        padding: 15px;
+    }
+    
+    .form-container form {
+        flex-direction: row;
+    }
+}
+
+/* Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+    /* Navigation adjustments */
+    nav {
+        top: 5px;
+        right: 5px;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .nav-button {
+        padding: 4px 8px;
+        font-size: 10px;
+    }
+
+    /* Hero Section */
+    .hero-section h1 {
+        font-size: 28px;
+        padding: 10px 20px;
+    }
+
+    /* Main Content Adjustments */
+    .destination-content {
+        padding: 10px;
+    }
+    
+    .description {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Form Section Adjustments */
+    .form-container {
+        padding: 10px;
+    }
+    
+    .form-container form {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .form-container button {
+        align-self: center;
+        width: 100%;
+    }
+    
+    /* Footer Adjustments */
+    footer {
+        padding: 20px 10px;
+        text-align: center;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
 }
