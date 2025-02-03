@@ -1,0 +1,254 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 2; /* Ensure it's above the hero image */
+}
+
+
+.nav-button {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.nav-button:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    color: #000; /* Slightly darker text for hover */
+}
+
+
+.submit-header {
+    background-color: #007BFF;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    
+}
+.submit-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.submit-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.submit-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.submit-content a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: #007BFF;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.submit-content a:hover {
+    background-color: #0056b3;
+}
+
+
+footer {
+    background-color: #ffc107;
+    color: black;
+    padding: 40px 20px;
+    margin-top: auto;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.footer-links h4, .footer-newsletter h4 {
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: black;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-newsletter p {
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.footer-newsletter form {
+    display: flex;
+    gap: 8px; /* Space between input and button */
+    align-items: center;
+}
+
+.footer-newsletter input {
+    flex: 1; /* Input takes remaining space */
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.footer-newsletter button {
+    background-color: #28a745; /* Green button */
+    color: white;
+    border: none;
+    padding: 0 16px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.footer-newsletter button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+@media (max-width: 1024px) {
+    .body{
+        justify-content: center;
+    }
+    
+    nav {
+        padding: 8px 15px;
+    }
+    
+    .nav-button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    
+    .submit-header {
+        padding: 15px;
+    }
+    
+    .submit-content {
+        padding: 30px 15px;
+    }
+    
+    .submit-content h1 {
+        font-size: 30px;
+    }
+    
+    .submit-content p {
+        font-size: 16px;
+    }
+    
+    .submit-content a {
+        padding: 8px 16px;
+        font-size: 16px;
+    }
+    
+    footer {
+        padding: 30px 15px;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+    nav {
+        padding: 5px 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-button {
+        padding: 4px 8px;
+        font-size: 10px;
+    }
+    
+    .submit-header {
+        padding: 10px;
+        font-size: 28px;
+    }
+    
+    .submit-content {
+        padding: 20px 10px;
+    }
+    
+    .submit-content h1 {
+        font-size: 24px;
+    }
+    
+    .submit-content p {
+        font-size: 14px;
+    }
+    
+    .submit-content a {
+        padding: 6px 12px;
+        font-size: 14px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    footer {
+        padding: 20px 10px;
+        text-align: center;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

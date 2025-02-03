@@ -1,173 +1,223 @@
-/* General Reset */
 html, body {
     width: 100%;
     height: 100%; /* Ensures the document spans the full viewport height */
     margin: 0; /* Removes default margin */
     display: flex;
-    flex-direction: column; /* Allows footer to be positioned below content */
+    flex-direction: column; 
+}
+
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 2; /* Ensure it's above the hero image */
+}
+
+
+.nav-button {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.nav-button:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    color: #000; /* Slightly darker text for hover */
 }
 
 /* Hero Section */
 .hero-section {
     position: relative;
-    background-image: url('header.jpg');
+    background-image: url('pictures/header.jpg');
     background-size: cover; /* Ensures the image covers the section */
     background-position: center; /* Centers the image */
-    height:100vh; 
-    color: black; /* Ensures text color is readable on the image */
+    height:100vh;
+    min-height: 800px;
     display: flex; /* Flexbox for aligning content */
-    align-items: center; /* Vertically centers the content */
-    justify-content: center; /* Horizontally centers the content */
-    text-align: center; /* Centers the text inside */
     width: 100%;
     margin: 0 auto;
     z-index: 1;
     padding-bottom: 50px; /* Adds spacing below the hero content */
+    flex-direction: column;
 }
 
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay for text readability */
-    z-index: 1; /* Keeps it below content */
-}
 
-.hero-content {
-    position: relative;
-    z-index: 2; /* Keeps content above the overlay */
-    max-width: 800px; /* Restricts the width of the content */
-    padding: 20px; /* Adds spacing around the content */
-    display: flex; /* Flexbox for internal alignment */
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Centers child elements horizontally */
-    justify-content: center; /* Centers child elements vertically */
-}
 
-.hero-content h1 {
-    font-size: 48px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.hero-content input#search-bar {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 4px;
-    border: none;
-    width: 90%; /* Use percentage to avoid unnecessary stretching */
-    max-width: 400px; /* Limit the maximum width */
-    margin-bottom: 20px;
-}
-
-/* Booking Form Styles */
-.form-container form {
+.search-bar {
     display: flex;
-    flex-wrap: wrap; /* Wrap items for responsiveness */
-    justify-content: center; /* Center the form horizontally */
-    gap: 10px; /* Add space between form elements */
-    z-index: 3;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 50[];
+    
+    
+}
+
+.search-bar input {
+    width: 100%; /* Ensure it does not stretch beyond the container */
+    padding: 10px;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.2);
+    height: 50px;
+    border-color: transparent;
+
+}
+
+.hero-content{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 20px; /* Space between heading and form */
+}
+
+.form-heading{
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 48px;
+
+}
+
+
+.form-container {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 1200px; /* Adjust as needed */
+        margin-bottom: 10px;
+    }
+
+.booking-form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end; /* Align all children to the bottom */
+    justify-content: space-between;
+    gap: 10px; /* Adjust the gap between form elements */
 }
 
 .form-group {
-    display: flex;
-    flex-direction: column;
-    min-width: 150px;
-}
-
-.form-dates {
-    display: flex;
-    flex-wrap: nowrap; /* Prevents dates from wrapping */
-    gap: 10px;
+    flex: 1; 
+    min-width: 150px; 
 }
 
 .form-group label {
+    display: block;
     margin-bottom: 5px;
-    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
 }
 
-.form-group input,
-.form-group select {
-    padding: 10px;
-    font-size: 14px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+.form-group input, .form-group select {
     width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
-.form-submit button {
+.form-group input:focus, .form-group select:focus {
+    border-color: #ffc107;
+    outline: none;
+}
+
+.submit-button {
     padding: 10px 20px;
-    background-color: #ffc107;
-    color: black;
+    font-size: 16px;
     border: none;
     border-radius: 4px;
-    font-size: 16px;
+    background-color: #ffc107;
+    color: white;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-end;
 }
 
-.form-submit button:hover {
-    background-color: #ffa000;
+.submit-button:hover {
+    background-color: #e4ac04;
 }
 
-/* Destinations Section */
-.destinations {
-    text-align: center;
-    padding: 50px 20px;
-    margin-top: 50px; /* Adds spacing between hero and destinations */
-    background-color: #f9f9f9;
-    z-index: 1; /* Correct stacking */
+.destinations h2{
+    margin-top: 40px;
+    margin: 20px ;
+
 }
 
-.destinations h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
 
 .destination-paraphs {
-    display: flex;
-    flex-direction: row; 
-    gap: 20px; /* Add spacing between paragraphs */
-    font-size: 1.2rem;
-    color: #666;
-    text-align: justify;
+display: flex;
+flex-direction: row;
+gap: 10px;
+font-size: 18px;
+margin: 20px;
+
 }
 
 .destination-cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    display: flex; /* Arrange the cards horizontally */
+    justify-content: center; /* Center the cards */
+    gap: 20px; /* Add space between the cards */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
 
 .card {
-    background-color: transparent;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 250px;
-    text-align: center;
+    position: relative; /* Make the card the reference for positioning the text */
+    width: 300px; /* Set a consistent width for cards */
+    border-radius: 8px; /* Optional: rounded corners */
+    overflow: hidden; /* Prevent content overflow */
+    text-align: center; /* Center-align the text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a shadow for a polished look */
 }
 
 .card img {
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
+    width: 100%; /* Ensure the image fills the card */
+    height: 450px; /* Set a fixed height for uniformity */
+    object-fit: cover; /* Crop the image if necessary to fit */
+    display: block;
+}
+
+.card h3,
+.card p {
+    position: absolute; /* Position text over the image */
+    left: 0; /* Align to the left of the card */
+    right: 0; /* Align to the right of the card */
+    color: white; /* White text for contrast */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Add text shadow for readability */
+    margin: 0;
+    padding: 10px;
 }
 
 .card h3 {
-    font-size: 1.5rem;
-    margin: 10px 0;
+    bottom: 40px; 
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .card p {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 10px;
+    bottom: 10px; 
+    font-size: 16px;
+    
 }
 
-/* Footer Section */
 footer {
     background-color: #ffc107;
     color: black;
@@ -244,41 +294,80 @@ footer {
     background-color: #218838; /* Darker green on hover */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 32px;
-    }
 
-    .form-container form {
-        flex-direction: column; /* Stack form elements vertically */
-        align-items: stretch;
+
+
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .hero-section {
+        min-height: 700px;
+        width: 100%;
+    }
+    .form-heading {
+        font-size: 40px;
+    }
+    .booking-form {
+        flex-direction: column;
+        align-items: center;
+    }
+    .form-group {
+        width: 90%;
+        margin-bottom: 10px;
+    }
+    .destination-cards {
         gap: 15px;
     }
-
-    .form-dates {
-        flex-direction: column; /* Stack dates vertically */
+    .card {
+        width: 90%;
+        max-width: 300px;
     }
+    .card img {
+        height: 350px;
+    }
+}
 
-    .footer-container {
+@media (max-width: 480px) {
+    nav {
+        justify-content: center;
+        padding: 5px 10px;
+    }
+    .hero-section {
+        min-height: 600px;
+        padding-bottom: 30px;
+    }
+    .form-heading {
+        font-size: 28px;
+        padding: 0 10px;
+    }
+    .booking-form {
         flex-direction: column;
-        text-align: center;
+        align-items: center;
+        gap: 8px;
     }
-
-    .footer-links, .footer-newsletter {
-        flex: 1 1 100%;
+    .form-group {
+        width: 100%;
+        margin-bottom: 8px;
     }
-
-    .footer-newsletter form {
-        flex-direction: column;
+    .search-bar {
+        padding: 0 10px;
+    }
+    .destination-cards {
         gap: 10px;
     }
-
-    .destinations {
-        margin-top: 30px; /* Adjust spacing for smaller screens */
+    .card {
+        width: 90%;
+        max-width: none;
     }
-
-    .destination-paraphs {
+    .card img {
+        height: auto;
+    }
+    footer {
+        padding: 20px;
+        text-align: center;
+    }
+    .footer-container {
         flex-direction: column;
+        align-items: center;
+    }
 }
-}
+    
